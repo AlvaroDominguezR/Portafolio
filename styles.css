@@ -19,7 +19,7 @@ a{
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #18181B;
+    background-color: #1e293b;
 }
 
 /* ===== NAVIGATION ===== */
@@ -44,13 +44,13 @@ nav::before {
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 2px;
+    height: 2.5px;
     background: linear-gradient(
         90deg,
         transparent,
-        #1d4ed8,
-        #10b981,
-        #1d4ed8,
+        #047857,  /* Verde esmeralda oscuro (mismo que las badges) */
+        #10b981,  /* Verde esmeralda más claro */
+        #047857,  /* Verde esmeralda oscuro */
         transparent
     );
     animation: slideBar 8s linear infinite;
@@ -121,8 +121,11 @@ nav::before {
 
 .blur{
     position: absolute;
-    box-shadow: 0 0 1000px 50px #1d4ed8;
-    z-index: -100;
+    box-shadow: 0 0 800px 35px #1d4ed8;
+    z-index: -200;
+    top: 20%;
+    left: -2%;
+    transform: translateX(-50%);
 }
 
 header{
@@ -226,7 +229,7 @@ section.skills-section {
 }
 
 .skill-badge {
-    background-color: #1E90FF; 
+    background-color: #047857; 
     color: white;
     padding: 0.6rem 1.2rem;
     border-radius: 1.25rem;
@@ -287,7 +290,7 @@ section.skills-section {
 }
 
 .skill-badge:hover {
-    background-color: #0284c7; 
+    background-color: #065f46; /* Verde esmeralda aún más oscuro */
     transform: scale(1.1);
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
 }
@@ -303,6 +306,15 @@ section.skills-section {
     letter-spacing: 0.1rem;
 }
 
+.projects-blur {
+    position: absolute;
+    box-shadow: 0 0 800px 35px #1d4ed8;
+    z-index: -200;
+    bottom: 20%;
+    right: 12%;
+    transform: translateX(-50%);
+
+}
 section.projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -629,3 +641,136 @@ section.projects {
     }
 }
 
+
+/* ===== TIMELINE SECTION ===== */
+section.timeline-section {
+    padding: 3rem 2rem;
+    background-color: #2b3b55; 
+    text-align: center;
+    position: relative;
+}
+
+.timeline-section h2 {
+    font-size: 2.5rem;
+    color: #FFC107; 
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.timeline-section p {
+    font-size: 1.5rem;
+    color: #90A4AE; 
+    margin-bottom: 2rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #10b981; 
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(77, 77, 255, 0.5);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem; /* Aumentado para mejor espaciado */
+}
+
+.timeline-dot {
+    width: 40px; /* Aumentado para iconos */
+    height: 40px;
+    background: #1e293b;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    z-index: 2; /* Asegura que esté sobre la línea */
+    border: 2px solid white; /* Borde blanco para contraste */
+    box-shadow: 0 0 0 3px #1e293b; /* Sombra externa del color principal */
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    transition: transform 0.3s ease; /* Efecto hover */
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px); /* Elevación al pasar el mouse */
+}
+
+.timeline-content h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.timeline-content h3 i {
+    margin-right: 12px;
+    color: #4d4dff;
+    font-size: 1.2em;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #333; 
+    font-weight: 500;
+}
+
+/* Posición alternada izquierda/derecha */
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+    text-align: left; /* Cambiado a izquierda para mejor lectura */
+    margin-right: -0.5%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-right: auto;
+    text-align: left; /* Siempre alineado a la izquierda */
+    margin-left: -0.5%;
+}
+
+.timeline-date {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px; /* Línea más a la izquierda */
+    }
+    
+    .timeline-dot {
+        left: 30px; /* Alineado con la línea */
+    }
+    
+    .timeline-content {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+        margin-right: 0 !important;
+    }
+}
