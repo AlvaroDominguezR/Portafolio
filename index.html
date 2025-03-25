@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Portafolio Personal Alvaro Dominguez</title>
-</head>
+</head id = "home">
 <body>
     
     <nav>
@@ -20,9 +20,8 @@
 
             <ul class="nav-links">
                 <li class="link"><a href="/index.html">Inicio</a></li>
-                <li class="link"><a href="#">Herramientas</a></li>
                 <li class="link"><a href="/proyectos.html">Proyectos</a></li>
-                <li class="link"><a href="#">Acerca de mi</a></li>
+                <li class="link"><a href="#skills-section">Acerca de mi</a></li>
             </ul>
             <button class="btn">Contactame</button>
         </div>
@@ -37,14 +36,16 @@
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla a eos aut! Ab accusantium ipsa dolore maxime quam recusandae, repellendus eum mollitia maiores eligendi expedita, cumque blanditiis obcaecati sunt dicta?
                 </p>
-                <button class="btn">Get started</button>
+                <a href="/imagenes/CV Álvaro Domínguez Robles 2025.pdf" download="CV-Alvaro-Dominguez.pdf">
+                    <button class="btn">Descarga Mi CV</button>
+                </a>
             </div>
             <div class="image">
                 <img src="/imagenes/header.png">
             </div>
         </header>
 
-        <section class="skills-section">
+        <section id="skills-section" class="skills-section">
             <h2>Conocimientos y habilidades</h2>
             <p>Mi bolsa de herramientas</p>
         
@@ -126,6 +127,29 @@
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Botones redes -->
+            <div class="footer-social">
+                <a href="TU_LINKEDIN" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="TU_GITHUB" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:TU_EMAIL" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" id="backToTop" aria-label="Volver al inicio">
+                    <i class="fas fa-home"></i>
+                </a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Álvaro Domínguez. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
     
