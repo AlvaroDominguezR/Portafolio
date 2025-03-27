@@ -9,7 +9,6 @@
     <title>Portafolio Personal Alvaro Dominguez</title>
 </head id = "home">
 <body>
-    
     <nav>
         <div class="nav-container">
             <div class="nav-logo">
@@ -17,13 +16,14 @@
                     <img src="/imagenes/logo-blanco.png">
                 </a>
             </div>
-
             <ul class="nav-links">
                 <li class="link"><a href="/index.html">Inicio</a></li>
                 <li class="link"><a href="/proyectos.html">Proyectos</a></li>
-                <li class="link"><a href="#skills-section">Acerca de mi</a></li>
+                <li id="link3" class="link"><a href="">Acerca de mi</a></li>
             </ul>
-            <button class="btn">Contactame</button>
+            <a href="/contacto.html">
+                <button class="btn">Contactame</button>
+            </a>
         </div>
     </nav>
     <main>
@@ -31,10 +31,10 @@
             <div class="content">
                 <span class="blur"></span>
                 <span class="blur"></span>
-                <h4>BIENVENIDO A MI PORTAFOLIO PERSONAL</h4>
-                <h1>Hola que tal, soy <span>ÁLVARO DOMÍNGUEZ</span>, Ingeniero Informatico</h1>
+                <h4>BIENVENIDO A MI PORTAFOLIO PERSONAL.</h4>
+                <h1>Hola, que tal, soy <span>ÁLVARO DOMÍNGUEZ</span>, Ingeniero Informatico</h1>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla a eos aut! Ab accusantium ipsa dolore maxime quam recusandae, repellendus eum mollitia maiores eligendi expedita, cumque blanditiis obcaecati sunt dicta?
+                    Ingeniero informático con sólida formación académica. Destaco por mi capacidad de aprendizaje, adaptación a desafíos y compromiso con la calidad. Habilidades de trabajo en equipo y resolución de problemas. Apasionado por la innovación tecnológica y el aprendizaje continuo.
                 </p>
                 <a href="/imagenes/CV Álvaro Domínguez Robles 2025.pdf" download="CV-Alvaro-Dominguez.pdf">
                     <button class="btn">Descarga Mi CV</button>
@@ -45,10 +45,9 @@
             </div>
         </header>
 
-        <section id="skills-section" class="skills-section">
+        <section class="skills-section">
             <h2>Conocimientos y habilidades</h2>
             <p>Mi bolsa de herramientas</p>
-        
             <div>
                 <span class="skill-badge">
                     <i class="fa-brands fa-html5"></i> HTML
@@ -95,33 +94,31 @@
             <p>Formación Académica y Experiencia Laboral</p>
 
             <div class="timeline">
-                <!-- Punto 1: Experiencia Laboral -->
+                <!-- Punto 1: Formacion Académica -->
                 <div class="timeline-item">
                     <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="timeline-content">
-                        <h3>Desarrollador Full-Stack</h3>
-                        <span class="timeline-date">2022 - Presente</span>
-                        <p>Empresa XYZ - Creación de aplicaciones web con React, Node.js y MongoDB. Liderazgo en proyectos de automatización.</p>
+                        <h3>Ingeniería en Informática</h3>
+                        <span class="timeline-date">2015 - 2021</span>
+                        <p>Pontificia Universidad Católica de Valparaíso. Donde aprendí habilidades de programación en distintos lenguajes, desarrollo web, gestión de bases de datos y metodologías ágiles.</p>
                     </div>
                 </div>
-
-                <!-- Punto 2: Formación Académica -->
+                <!-- Punto 2 y subsiguientes: experiencias laborales-->
                 <div class="timeline-item">
                     <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
                     <div class="timeline-content">
-                        <h3>Ingeniería Informática</h3>
-                        <span class="timeline-date">2018 - 2022</span>
-                        <p>Universidad ABC - Especialización en desarrollo de software e inteligencia artificial.</p>
+                        <h3>Desarrollador C#</h3>
+                        <span class="timeline-date">Abril 2021 - Julio 2021</span>
+                        <p>Desarrollador de servicios trabajando principalmente en el entorno .NET utilizando los lenguajes C# y XAML.</p>
                     </div>
                 </div>
-
-                <!-- Punto 3: Otros Logros -->
                 <div class="timeline-item">
                     <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
                     <div class="timeline-content">
-                        <h3>Certificación en Cloud</h3>
-                        <span class="timeline-date">2021</span>
-                        <p>AWS Certified Developer - Arquitectura de soluciones escalables en la nube.</p>
+                        <h3>Desarrollo Independiente</h3>
+                        <span class="timeline-date">2024 - Actualidad</span>
+                        <p>He estado aprendiendo y desarrollando proyectos de manera autónoma, enfocándome en aprender nuevas tecnologías. En búsqueda de mi próximo desafío laboral.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -132,16 +129,16 @@
         <div class="footer-content">
             <!-- Botones redes -->
             <div class="footer-social">
-                <a href="TU_LINKEDIN" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/alvaro-dominguez-robles" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="TU_GITHUB" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/AlvaroDominguezR" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:TU_EMAIL" aria-label="Email">
+                <a href="/contacto.html" rel="noopener noreferrer" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="#" id="backToTop" aria-label="Volver al inicio">
+                <a href="" id="backToTop" aria-label="Volver al inicio">
                     <i class="fas fa-home"></i>
                 </a>
             </div>
@@ -151,7 +148,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="javascript.js"></script>
     
 </body>
 </html>

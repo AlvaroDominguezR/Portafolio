@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-html {
+html, body {
     scroll-behavior: smooth;
 }
 
@@ -50,35 +50,41 @@ nav::before {
     left: 0;
     width: 100vw;
     height: 2.5px;
-    background: linear-gradient(
+    background: linear-gradient(   
         90deg,
         transparent,
-        #047857,  /* Verde esmeralda oscuro (mismo que las badges) */
-        #10b981,  /* Verde esmeralda más claro */
-        #047857,  /* Verde esmeralda oscuro */
+        #047857,  
+        #10b981,  
+        #047857,  
         transparent
     );
     animation: slideBar 8s linear infinite;
 }
 
 .nav-container {
-    max-width: 1400px;
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
     gap: 2rem;
+    position: relative;
 }
 
 .nav-logo{
     max-width: 100px;
 }
 
-.nav-links{
+.nav-links {
     list-style: none;
     display: flex;
-    align-items: center;
     gap: 3rem;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajuste fino del centrado */
 }
 
 .link a{
@@ -148,14 +154,15 @@ header{
     gap: 2rem;
 }
 
-.content{
+.content {
+    margin-top: 5rem;
     margin-bottom: 1rem;
     color: #ccc;
     font-size: 1rem;
     font-weight: 600;
 }
 
-.content h1{
+.content h1 {
     color: #fff;
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -163,14 +170,15 @@ header{
     line-height: 4rem;
 }
 
-.content h1 span{
+.content h1 span {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px #fff;
 }
 
-.content p{
+.content p {
     margin-bottom: 2rem;
     color: #ccc;
+    text-align: justify;
 }
 
 .image{
@@ -469,7 +477,7 @@ section.timeline-section {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 3rem; /* Aumentado para mejor espaciado */
+    margin-bottom: 3rem; 
 }
 
 .timeline-dot {
@@ -533,6 +541,7 @@ section.timeline-section {
 
 .timeline-content h3 {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 0.5rem;
     color: #FFC107;
@@ -548,6 +557,7 @@ section.timeline-section {
     font-size: 1rem;
     color:  #94a3b8; 
     font-weight: 500;
+    text-align: center;
 }
 
 /* Posición alternada izquierda/derecha */
@@ -569,6 +579,7 @@ section.timeline-section {
     font-size: 0.9rem;
     margin: 0.5rem 0;
     font-weight: 500;
+    text-align: center;
 }
 
 
@@ -863,4 +874,86 @@ section.timeline-section {
     color: #64748b; /* Gris más claro */
     font-size: 0.9rem;
     margin: 0;
+}
+
+/*====== CONTACTAME SECTION =======*/
+.contact-section {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background-color: rgba(30, 41, 59, 0.8);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+    color: #10b981;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-section .subtitle {
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group label {
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 1rem;
+    background-color: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #f8fafc;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.form-group textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    background-color: #10b981;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0d9b6e;
+    transform: translateY(-2px);
+}
+
+.btn-submit i {
+    margin-right: 10px;
 }

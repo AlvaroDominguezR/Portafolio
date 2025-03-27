@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <title>Acerca de Mi</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/index.html">
+                    <img src="/imagenes/logo-blanco.png">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li class="link"><a href="/index.html">Inicio</a></li>
+                <li class="link"><a href="/proyectos.html">Proyectos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="contact-section">
+            <h2>Disponibilidad inmediata para oportunidades laborales</h2>
+            <p class="subtitle">Completa el formulario y me pondré en contacto a la brevedad</p>
+            
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/mwplqdyq" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name" name="name" required placeholder="Ej: Kendrick Lamar Duckworth">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Asunto</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Ej: Oportunidad laboral">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="Por favor, incluye: 
+    - Nombre de la empresa 
+    - Detalles del puesto
+    ¡Gracias por considerarme!"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-submit">
+                    <i class="fas fa-paper-plane"></i> Enviar mensaje
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Botones redes -->
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/alvaro-dominguez-robles" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/AlvaroDominguezR" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="" id="backToTop" aria-label="Volver al inicio">
+                    <i class="fas fa-home"></i>
+                </a>
+            </div>
+            <p class="footer-copyright">
+                © 2024 Álvaro Domínguez. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/javascript.js"></script>
+    <script>
+        const $form = document.querySelector('form')
+        $form.addEventListener('submit', handleSubmit)
+        async function handleSubmit(event){
+            event.preventDefault()
+            const form = new FormData(this)
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: form,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            if (response.ok) {
+                this.reset()
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Mensaje enviado!',
+                    text: 'Gracias por contactarme. Te responderé a la brevedad.',
+                    confirmButtonText: 'Entendido',
+                    background: '#1e293b', 
+                    color: '#fff' 
+        });
+            }
+        }
+    </script>
+
+</body>
+</html>
